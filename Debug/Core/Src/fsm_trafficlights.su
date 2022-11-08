@@ -1,0 +1,2 @@
+../Core/Src/fsm_trafficlights.c:9:6:fsm_trafficlights_A	8	static
+../Core/Src/fsm_trafficlights.c:63:6:fsm_trafficlights_B	8	static

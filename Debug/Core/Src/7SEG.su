@@ -1,0 +1,4 @@
+../Core/Src/7SEG.c:10:6:display7SEG_A	16	static
+../Core/Src/7SEG.c:57:6:display7SEG_B	16	static
+../Core/Src/7SEG.c:104:6:displayNumber_A	16	static
+../Core/Src/7SEG.c:109:6:displayNumber_B	16	static
