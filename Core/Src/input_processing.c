@@ -89,6 +89,7 @@ void fsm_mode(void)
 	switch(mode)
 	{
 	case 0:
+
 		if (is_button_pressed(SELECT_BUTTON))
 		{
 			mode = (mode + 1) % 4 == 0 ? mode = 1 : (mode + 1) % 4;
@@ -125,6 +126,8 @@ void fsm_for_input_processing(void)
 	switch(buttonState)
 	{
 	case BUTTON_RELEASED:
+		fsm_trafficlights_A();
+		fsm_trafficlights_B();
 		if(is_button_pressed(SELECT_BUTTON))
 		{
 			buttonState = BUTTON_PRESSED;

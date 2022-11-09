@@ -47,7 +47,6 @@ void button_reading(void)
 				//the flag is turned on when 1 second has passed
 				//since the button is pressed.
 					flagForButtonPress1s[i] = 1;
-					//todo
 				}
 			}
 			else

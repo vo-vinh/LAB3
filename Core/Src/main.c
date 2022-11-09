@@ -95,13 +95,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   setTimer1(10);
   setTimer0(10);
+  setTimer2(10);
   //setTimer1(10);
   while (1)
   {
-	 fsm_trafficlights_A();
-	 fsm_trafficlights_B();
 	 fsm_for_input_processing();
-	  //void fsm_for_input_processing();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

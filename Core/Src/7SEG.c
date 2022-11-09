@@ -103,11 +103,61 @@ void display7SEG_B(int num)
 
 void displayNumber_A(int num)
 {
-	display7SEG_A(num % 10);
+	switch(led_index)
+		{
+		case 0:
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
+			display7SEG_A(num % 10);
+			if (timer2_flag == 1)
+			{
+				led_index = 1;
+				setTimer2(20);
+
+			}
+			break;
+		case 1:
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
+			display7SEG_A(num / 10);
+			if (timer2_flag == 1)
+			{
+				led_index = 0;
+				setTimer2(20);
+			}
+			break;
+		default:
+			break;
+		}
 }
 
 void displayNumber_B(int num)
 {
-	display7SEG_B(num % 10);
+	switch(led_index)
+	{
+	case 0:
+		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_SET);
+		display7SEG_B(num % 10);
+		if (timer2_flag == 1)
+		{
+			led_index = 1;
+			setTimer2(20);
+
+		}
+		break;
+	case 1:
+		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, GPIO_PIN_RESET);
+		display7SEG_B(num / 10);
+		if (timer2_flag == 1)
+		{
+			led_index = 0;
+			setTimer2(20);
+		}
+		break;
+	default:
+		break;
+	}
 }
 
